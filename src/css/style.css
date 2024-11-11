@@ -2,7 +2,95 @@
     display: none;
 }
 
+@font-face {
+    font-family: Delius-Regular;
+    src: url(../assets/font/Delius-Regular.ttf);
+}
+
+@font-face {
+    font-family: Bitter-Regular;
+    src: url(../assets/font/Bitter-Regular.ttf);
+}
+
 body {
     width: 100%;
     height: 100vh;
+    background-color: #343330;
+    font-family: Bitter-Regular, Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: #343330;
+    background-image: url(../assets/images/halloween-ghost.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+main {
+    width: 400px;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    border: 2px solid var(--primary-color);
+    display: flex;
+    justify-content: center;
+
+}
+
+.quiz__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sizing-small);
+}
+
+.quiz__question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sizing-small);
+}
+
+.quiz__question-text {
+    font-size: larger;
+    text-align: center;
+}
+
+.quiz__question-options {
+    display: flex;
+    gap: var(--sizing-small);
+}
+
+button {
+    padding: 8px;
+    width: 100px;
+    background-color: #343330;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover {
+    scale: 1.1;
+    background-color: black;
+}
+
+
+@media screen and (min-width: 1000px) {
+    body {  
+        background-image: url(../assets/images/halloween-pumkin.webp);
+    };
+
+    main {
+        backdrop-filter: blur(8px);
+        border: 2px solid var(--secondary-color);
+    };
+
+    
+}
+
+
+
