@@ -1,96 +1,188 @@
-.hide {
-    display: none;
+@font-face {
+  font-family: Bitter-Regular;
+  src: url(../assets/font/Bitter-Regular.ttf);
 }
 
 @font-face {
-    font-family: Delius-Regular;
-    src: url(../assets/font/Delius-Regular.ttf);
-}
-
-@font-face {
-    font-family: Bitter-Regular;
-    src: url(../assets/font/Bitter-Regular.ttf);
+  font-family: Bitter-SemiBold;
+  src: url(../assets/font/Bitter-SemiBold.ttf);
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    background-color: #343330;
-    font-family: Bitter-Regular, Arial, Helvetica, sans-serif;
-    font-size: larger;
-    color: #343330;
-    background-image: url(../assets/images/halloween-ghost.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  width: 100%;
+  height: 100vh;
+  font-family: Bitter-Regular, Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-medium);
+  color: black;
+  background-image: url(../assets/images/halloween-ghost.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-    width: 400px;
-    height: 100vh;
-    backdrop-filter: blur(4px);
-    border: 2px solid var(--primary-color);
-    display: flex;
-    justify-content: center;
-
+  width: 400px;
+  height: 100vh;
+  overflow-y: auto;
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
 }
 
 .quiz__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--sizing-small);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sizing-small);
 }
 
 .quiz__question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--sizing-small);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sizing-small);
 }
 
 .quiz__question-text {
-    font-size: larger;
-    text-align: center;
+  font-family: Bitter-SemiBold;
+  font-size: var(--font-size-x-large);
+  text-align: center;
 }
 
 .quiz__question-options {
-    display: flex;
-    gap: var(--sizing-small);
+  display: flex;
+  justify-content: space-evenly;
+  gap: var(--sizing-small);
 }
 
 button {
-    padding: 8px;
-    width: 100px;
-    background-color: #343330;
-    color: white;
-    border-radius: 10px;
-    border: none;
+  padding: 12px;
+  width: 120px;
+  background-color: var(--third-background-color);
+  color: var(--fourth-color);
+  border-radius: 10px;
+  border: none;
+  font-size: var(--font-size-small);
+  text-align: center;
 }
 
 button:hover {
+  transform: scale(1.1);
+}
+/* ADDING CHANGE OF STATE TO  ANSWER-BUTTON CLICKED ON */
+.quiz__question-options-btn--active {
+  background-color: var(--fourth-background-color);
+  color: var(--third-color);
+}
+
+.quiz__progress-text {
+  font-family: Bitter-SemiBold;
+}
+
+.quiz__restart-btn {
+  width: 180px;
+}
+
+.quiz__review-container {
+  width: 100%;
+  height: 90vh;
+  font-family: var(--secondary-font-family);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sizing-small);
+  padding: 0 var(--sizing-small);
+}
+
+.result {
+  height: 100%;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.review-container {
+  width: 100%;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  padding: var(--sizing-medium);
+  line-height: 1.6;
+}
+
+/* FOR JS TO HIDE THE ELEMTS BY ADDING CLASSNAME */
+.hide {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    height: 100vh;
+    background-image: url(../assets/images/halloween-pumkin.webp);
+    color: var(--secondary-color);
+  }
+
+  main {
+    width: 900px;
+    backdrop-filter: blur(24px);
+    border: 2px solid var(--primary-color);
+  }
+
+  .quiz__container {
+    gap: var(--sizing-large);
+  }
+
+  .quiz__question-container {
+    gap: var(--sizing-large);
+  }
+
+  .quiz__question-options {
+    gap: var(--sizing-medium);
+  }
+
+  .quiz__question-text {
+    font-size: var(--font-size-x-large);
+  }
+
+  .quiz__start-btn {
+    width: 200px;
+    text-align: center;
+    font-size: var(--font-size-medium);
+  }
+
+  button {
+    width: 150px;
+    background-color: var(--third-background-color);
+    color: var(--fourth-color);
+    border-radius: 10px;
+    border: none;
+    font-size: var(--font-size-small);
+  }
+
+  button:hover {
     scale: 1.1;
-    background-color: black;
+    background-color: var(--fourth-background-color);
+    color: var(--third-color);
+  }
+
+  .quiz__review-container {
+    width: 100%;
+    font-size: 1.3rem;
+    gap: var(--sizing-small) 0;
+  }
+
+  .result {
+    color: var(--secondary-color);
+    text-align: center;
+  }
+
+  .review-container {
+    background-color: hsla(0, 0%, 0%, 0.6);
+    padding: var(--sizing-small) 0;
+  }
 }
-
-
-@media screen and (min-width: 1000px) {
-    body {  
-        background-image: url(../assets/images/halloween-pumkin.webp);
-    };
-
-    main {
-        backdrop-filter: blur(8px);
-        border: 2px solid var(--secondary-color);
-    };
-
-    
-}
-
-
-
