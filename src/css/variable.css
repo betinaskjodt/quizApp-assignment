@@ -1,19 +1,26 @@
 :root {
     --primary-background-color: #343330;
     --secondary-background-color: white;
+    --third-background-color: #FB8B24;
+    --fourth-background-color: black;
 
     --primary-color: #343330;
-    --secondary-color: white; 
+    --secondary-color: white;
+    --third-color: #FB8B24;
+    --fourth-color: black; 
 
     --sizing-x-small: 0.5rem;
     --sizing-small: 1rem;
     --sizing-medium: 2rem;
     --sizing-large: 3rem;
     --sizing-x-large: 4rem;
-
+    
     --font-size-x-small: 0.5rem;
     --font-size-small: 1rem;
     --font-size-medium: 1.5rem;
     --font-size-large: 2rem;
     --font-size-x-large: 2.5rem;
+
+    --primary-font-family: Bitter-Regular;
+    --secondary-font-family: Bitter-SemiBold;
 }
